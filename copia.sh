@@ -2,6 +2,11 @@
 # Copia de seguridad de una carpeta en un .tar.gz con fecha
 DESTINO="${DESTINO:-$HOME/copias}"
 
+if [ "$1" = "--lista" ]; then
+ ls -1 "$DESTINO"
+ exit 0
+fi
+
 if [ ! -d "$1" ]; then
  echo "Error: no existe la carpeta $1" >&2
  exit 1
