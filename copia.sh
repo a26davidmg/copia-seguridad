@@ -17,3 +17,4 @@ FICHERO="$COPIA_DESTINO/copia-$(date +%Y%m%d-%H%M%S).tar.gz"
 tar -czf "$FICHERO" -C "$1" .
 echo "Copia creada: $FICHERO"
 ls -lh "$FICHERO"
+[ -z "$COPIA_DIAS" ] || find "$COPIA_DESTINO" -name "copia-*" -mtime +"$COPIA_DIAS" -delete
