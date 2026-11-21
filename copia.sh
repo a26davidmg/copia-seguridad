@@ -1,6 +1,10 @@
 #!/bin/bash
 # Copia de seguridad de una carpeta en un .tar.gz con fecha
 COPIA_DESTINO="${COPIA_DESTINO:-$HOME/copias}"
+if [ "$1" = "--ayuda" ]; then
+ echo "Uso: ./copia.sh <carpeta> | --lista | -- ayuda"
+ exit 0
+fi
 
 if [ "$1" = "--lista" ]; then
  ls -1 "$COPIA_DESTINO"
